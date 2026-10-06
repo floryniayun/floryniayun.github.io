@@ -1,0 +1,10 @@
+<h2>⊞ Applications</h2>
+<p style="color:rgba(255,255,255,.5);margin-top:6px">Edit file ini: pages/apps.html</p>
+<div class="grid" id="apps-grid" style="margin-top:16px"></div>
+<script>
+fetch('../data.json').then(r=>r.json()).then(d=>{
+  document.getElementById('apps-grid').innerHTML=d.apps.map(a=>`
+    <div class="card"><div class="box">${a.icon}</div><h4>${a.title}</h4></div>
+  `).join('');
+});
+</script>
