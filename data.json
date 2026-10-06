@@ -1,0 +1,12 @@
+{
+  "projects": [
+    {"icon": "🚀", "title": "Miniblink Browser", "sub": "Browser ringan LTSC - Dibimbing Ayah", "tag": "On Progress - Ayah", "link": "#"},
+    {"icon": "🖥️", "title": "Mac Dock Setup", "sub": "Setup transparan ala Mac OS", "tag": "Selesai", "link": "#"},
+    {"icon": "🌸", "title": "Portfolio Finder", "sub": "Web pribadi aesthetic", "tag": "Live", "link": "https://floryniayun.github.io"},
+    {"icon": "📚", "title": "Log Belajar", "sub": "Catatan ngoding harian", "tag": "Ongoing", "link": "#"}
+  ],
+  "recents": ["🕒 Hari ini - Deploy portfolio","🚀 Kemarin - Belajar bareng Ayah","📚 2 hari lalu - Hapus repo bushido"],
+  "apps": [{"icon": "💻", "title": "VS Code"},{"icon": "🌐", "title": "Chrome"},{"icon": "🐙", "title": "GitHub"},{"icon": "🎨", "title": "Figma"},{"icon": "📱", "title": "WhatsApp"},{"icon": "🌸", "title": "Sakura"}],
+  "about": {"name": "Yunia Rahmawati","title": "Calon Software Engineer","location": "Pangkalpinang","bio": "Halo! Saya Yunia, calon Software Engineer dari Pangkalpinang. Belajar Web Dev dibimbing Ayah.","focus": "HTML, CSS, JS, GitHub Pages","motto": "Dari yang gak bisa hapus repo, sekarang punya web!"},
+  "contact": {"email": "floryniayun@gmail.com","github": "https://github.com/floryniayun","linkedin": "https://linkedin.com","whatsapp": "https://wa.me/","city": "Pangkalpinang"}
+}
