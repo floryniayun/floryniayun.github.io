@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Yunia - Portfolio</title><style>*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}body{background:#0b0e1a;color:#fff;padding:20px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:16px;margin-top:20px}.app{background:rgba(255,255,255,0.08);border-radius:16px;padding:20px;text-align:center;cursor:pointer}.tag{font-size:11px;background:rgba(108,140,255,0.3);padding:3px 8px;border-radius:20px;margin-top:6px;display:inline-block}</style></head><body>
+<h1>🌸 Portfolio Yunia Rahmawati</h1><p style="opacity:0.6">Calon Software Engineer - Dibimbing Ayah - Pangkalpinang</p>
+<div class="grid" id="grid">Loading...</div>
+<script>
+fetch('data/projects.json').then(r=>r.json()).then(list=>{
+ document.getElementById('grid').innerHTML=list.map(p=>`<div class="app"><div style="font-size:32px">${p.icon}</div><b>${p.judul}</b><br><span style="opacity:0.6;font-size:12px">${p.desc}</span><br><span class="tag">${p.tag}</span></div>`).join('');
+});
+</script>
+</body></html>
