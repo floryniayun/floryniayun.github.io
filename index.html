@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Yunia Rahmawati</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
+body{min-height:100vh;background:#0a0e1e url('https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=2076') center/cover no-repeat fixed;display:flex;align-items:center;justify-content:center;padding:12px}
+.window{width:100%;max-width:1080px;background:rgba(30,33,48,0.92);backdrop-filter:blur(30px) saturate(160%);border:1px solid rgba(255,255,255,0.14);border-radius:14px;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,.6)}
+.topbar{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.dots{display:flex;gap:8px}.d{width:12px;height:12px;border-radius:50%}
+.body{display:flex;min-height:560px}
+.side{width:220px;background:rgba(255,255,255,.03);border-right:1px solid rgba(255,255,255,.07);padding:12px}
+.side .m{font-size:12px;padding:8px 10px;border-radius:7px;color:rgba(255,255,255,.6);display:flex;gap:10px;align-items:center}
+.side .label{font-size:11px;letter-spacing:.8px;color:rgba(255,255,255,.25);font-weight:700;margin:16px 10px 6px}
+.side .item{padding:8px 10px;border-radius:8px;display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.65);font-size:13px;cursor:pointer;margin-bottom:2px}
+.side .item.active{background:rgba(140,150,255,.22);color:#fff}
+.main{flex:1;padding:18px;background:rgba(0,0,0,.2)}
+.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:12px;flex-wrap:wrap}
+.head h2{color:#fff;font-size:22px}.head small{color:rgba(255,255,255,.4);font-size:12px;display:block;margin-top:2px}
+.search{position:relative}.search input{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:9px 12px 9px 34px;color:#fff;width:220px;font-size:13px;outline:none}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:700px){.body{flex-direction:column}.side{width:100%;display:flex;overflow:auto;gap:6px}.side .label,.side .m{display:none}.grid{grid-template-columns:repeat(2,1fr)}.search input{width:100%}}
+.card{text-align:center;cursor:pointer}
+.box{aspect-ratio:1;background:radial-gradient(100% 100% at 30% 20%, rgba(255,255,255,.18), rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.14);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:44px;transition:.2s}
+.card:hover .box{transform:translateY(-3px)}
+.card h4{color:#fff;font-size:13.5px;margin-top:8px}.card p{color:rgba(255,255,255,.45);font-size:11px;margin-top:2px}
+.foot{text-align:center;color:rgba(255,255,255,.3);font-size:10px;padding:10px;border-top:1px solid rgba(255,255,255,.06)}
+</style>
+</head>
+<body>
+<div class="window">
+<div class="topbar">
+<div class="dots"><div class="d" style="background:#ff5f57"></div><div class="d" style="background:#febc2e"></div><div class="d" style="background:#28c840"></div></div>
+<div style="color:rgba(255,255,255,.8);font-size:14px;font-weight:500">Portfolio — Yunia Rahmawati</div>
+<div style="display:flex;gap:12px;color:rgba(255,255,255,.5)">⌕ ◫ ⛶</div>
+</div>
+<div class="body">
+<div class="side">
+<div class="m">☰ Menu</div>
+<div class="label">FAVORITES</div>
+<div class="item"><span>🕒</span> Recents</div>
+<div class="item active"><span>📁</span> Projects</div>
+<div class="item"><span>⊞</span> Applications</div>
+<div class="item"><span>📄</span> About Me</div>
+<div class="item"><span>📃</span> Resume</div>
+<div class="item"><span>💬</span> Contact</div>
+<div class="label">LINKS</div>
+<div class="item"><span>⭐</span> GitHub</div>
+<div class="item"><span>🔗</span> LinkedIn</div>
+</div>
+<div class="main">
+<div class="head">
+<div><h2>Projects</h2><small>4 items • Creative Development Portfolio</small></div>
+<div class="search"><span style="position:absolute;left:10px;top:8px;opacity:.5">🔍</span><input placeholder="Search projects..." oninput="filter(this.value)"></div>
+</div>
+<div class="grid" id="grid"></div>
+</div>
+</div>
+<div class="foot">Built with HTML • CSS • JS • Deployed on GitHub Pages • Calon Software Engineer - Dibimbing Ayah - Pangkalpinang</div>
+</div>
+<script>
+const data=[
+{icon:"🚀",title:"Miniblink Browser",sub:"Browser ringan LTSC",tag:"On Progress - Ayah"},
+{icon:"🖥️",title:"Mac Dock Setup",sub:"Setup transparan",tag:"Selesai"},
+{icon:"🌸",title:"Portfolio Finder",sub:"Web pribadi",tag:"Live"},
+{icon:"📚",title:"Log Belajar",sub:"Catatan ngoding",tag:"Ongoing"}
+];
+function render(list){
+document.getElementById('grid').innerHTML=list.map(d=>`<div class="card"><div class="box">${d.icon}</div><h4>${d.title}</h4><p>${d.sub}</p><span style="display:inline-block;margin-top:6px;background:rgba(140,150,255,.18);border:1px solid rgba(140,150,255,.3);color:#aab4ff;font-size:10px;padding:3px 8px;border-radius:12px">${d.tag}</span></div>`).join('')
+}
+function filter(q){render(data.filter(x=>x.title.toLowerCase().includes(q.toLowerCase())))}
+render(data);
+</script>
+</body>
+</html>
