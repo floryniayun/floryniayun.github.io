@@ -1,0 +1,8 @@
+<h2>🕒 Recents</h2>
+<p style="color:rgba(255,255,255,.5);margin-top:6px">Edit file ini: pages/recents.html</p>
+<div class="card-about" id="recents-list" style="margin-top:16px">Loading...</div>
+<script>
+fetch('../data.json').then(r=>r.json()).then(d=>{
+  document.getElementById('recents-list').innerHTML=d.recents.join('<br><br>');
+});
+</script>
